@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "job-portal-d3030"
+  },
+  "targets": {
+    "job-portal-d3030": {
+      "hosting": {
+        "app": [
+          "job-portal-d3030"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
