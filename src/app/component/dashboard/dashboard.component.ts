@@ -34,6 +34,7 @@ export class DashboardComponent implements OnInit {
       minSalary: [0, Validators.required],
       maxSalary: [0, Validators.required],
     });
+    this.getAllJobs();
   }
 
   getControl(name: string) {

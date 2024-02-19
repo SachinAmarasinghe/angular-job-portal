@@ -27,6 +27,11 @@ export class AuthService {
     });
   }
 
+  // is authenticated
+  static IsAuthenticated() {
+    return !!localStorage.getItem('token');
+  }
+
   //register
   register(email: string, password: string) {
     this.fireauth.createUserWithEmailAndPassword(email, password).then(
@@ -35,7 +40,7 @@ export class AuthService {
       },
       (err) => {
         alert(err.message);
-        this.router.navigate(['register']);
+        this.router.navigate(['login']);
       }
     );
   }
@@ -46,7 +51,7 @@ export class AuthService {
       () => {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['/login']);
       },
       (err) => {
         console.log(err.message);
