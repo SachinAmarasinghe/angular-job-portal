@@ -1,0 +1,71 @@
+<div class="p-4 h-svh">
+  <!-- add job form  -->
+  <div class="shadow-lg ring-1 ring-gray-100 p-6 rounded-md w-96">
+    <div class="text-center font-medium text-lg">Add a new Job</div>
+    <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
+      <form [formGroup]="addjobform" class="space-y-6">
+        <app-input
+          label="Job Title"
+          id="job_title"
+          [control]="getControl('title')"
+        ></app-input>
+
+        <app-textarea
+          label="Description"
+          id="description"
+          [control]="getControl('description')"
+        ></app-textarea>
+
+        <app-select
+          label="category"
+          id="category"
+          [control]="getControl('category')"
+          [options]="[
+            { text: 'Frontend', value: 'Frontend' },
+            { text: 'Backend', value: 'Backend' },
+            { text: 'Fullstack', value: 'Fullstack' },
+            { text: 'Other', value: 'Other' }
+          ]"
+        ></app-select>
+
+        <app-input
+          id="company"
+          label="Company"
+          type="text"
+          [control]="getControl('company')"
+        ></app-input>
+
+        <app-input
+          id="location"
+          label="Location"
+          type="text"
+          [control]="getControl('location')"
+        ></app-input>
+
+        <app-input
+          id="min_salary"
+          label="Min Salary"
+          type="number"
+          [control]="getControl('minSalary')"
+        ></app-input>
+
+        <app-input
+          id="max-salary"
+          label="Max Salary"
+          type="number"
+          [control]="getControl('maxSalary')"
+        ></app-input>
+
+        <button
+          (click)="addJob()"
+          class="disabled:bg-indigo-400 flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >
+          Add Job
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- display jobs  -->
+  <div></div>
+</div>
